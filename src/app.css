@@ -1,0 +1,150 @@
+/* DevTrack — styles for the multi-page views, controls and accessibility.
+   style.css holds the base theme; this file builds on its variables. */
+
+:root{color-scheme:dark;--accent:#a99bff;--ok:#65d9bd;--bad:#ff969b;--warn:#f6bd60}
+
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;left:12px;top:-60px;z-index:10;background:var(--accent);color:#11152a;padding:10px 14px;border-radius:8px;font-weight:700;text-decoration:none;transition:top .15s}
+.skip-link:focus{top:12px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+#view{outline:none}
+
+/* top bar */
+.topbar-right{gap:18px;flex-wrap:wrap;justify-content:flex-end}
+.topnav{display:flex;gap:4px}
+.topnav a{color:#c9cee0;text-decoration:none;font-size:13px;padding:7px 11px;border-radius:8px}
+.topnav a:hover{background:rgba(169,155,255,.12)}
+.topnav a[aria-current="page"]{color:#fff;background:rgba(169,155,255,.18)}
+.api-status[data-low="true"]{color:var(--warn)}
+.api-status[data-low="true"] i{background:var(--warn);box-shadow:0 0 10px var(--warn)}
+
+/* search form with type selector */
+.search-form select{height:46px;border:1px solid var(--line);border-radius:9px;background:#10172c;color:#e8eaf5;font:13px "DM Sans",sans-serif;padding:0 10px}
+.hero{padding-bottom:40px}
+
+/* buttons */
+.btn{height:40px;border:1px solid transparent;border-radius:9px;background:var(--accent);color:#11152a;padding:0 16px;font:700 13px "DM Sans",sans-serif;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.btn:hover{background:#c0b7ff;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:#dfe2f0;border-color:var(--line)}
+.btn-ghost:hover{background:rgba(169,155,255,.12);border-color:rgba(169,155,255,.4)}
+
+/* states */
+.state-panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px;text-align:center;color:#c9cee0;margin-top:8px}
+.state-panel p{color:#a0aac1;font-size:14px;margin:8px 0 0}
+.state-error{border-color:rgba(255,150,155,.4)}
+.state-error strong{color:var(--bad)}
+.state-actions{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.notice{background:rgba(246,189,96,.08);border:1px solid rgba(246,189,96,.3);color:#f2d9a8;border-radius:10px;padding:10px 14px;font-size:13px;margin:14px 0}
+.notice a{color:#f6d79b}
+.muted{color:#a0aac1}
+
+/* home */
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px}
+.feature-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;color:inherit;text-decoration:none;display:block;transition:border-color .2s,transform .2s}
+a.feature-card:hover{border-color:rgba(169,155,255,.5);transform:translateY(-2px)}
+.feature-card h3{font:600 15px "Space Grotesk",sans-serif;margin:0 0 8px}
+.feature-card p{font-size:13px;line-height:1.6;color:#a0aac1;margin:0}
+
+/* controls */
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;margin:16px 0 4px}
+.panel.controls{padding:16px 18px;margin:0 0 14px}
+.field{display:grid;gap:5px;font-size:12px;color:#a0aac1}
+.field-grow{flex:1 1 200px}
+.field input,.field select{height:40px;border:1px solid var(--line);border-radius:9px;background:#10172c;color:#f4f5fb;font:14px "DM Sans",sans-serif;padding:0 12px;min-width:0}
+.check-field{display:flex;align-items:center;gap:7px;font-size:13px;color:#c9cee0;height:40px}
+.check-field input{width:16px;height:16px;accent-color:#a99bff}
+.export-bar{display:flex;gap:8px;flex-wrap:wrap}
+.export-bar .btn{height:34px;padding:0 12px;font-size:12px}
+.results-label{margin:14px 0 0}
+.more-row{text-align:center;padding-top:14px}
+.compare-form .message{flex-basis:100%;margin:0;min-height:0}
+.compare-actions{display:flex;justify-content:flex-end;margin:0 0 12px}
+
+/* repository rows */
+.repo-title-line{display:flex;align-items:center;gap:8px}
+.repo-title{text-decoration:none}
+.repo-title:hover{text-decoration:underline;text-underline-offset:3px}
+.external{text-decoration:none;padding:2px 4px}
+.external:hover{color:#fff}
+.repo-main p{max-width:min(590px,60vw)}
+.badge,.chip{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;background:rgba(169,155,255,.14);color:#cfc8ff}
+.topic-row{flex-wrap:wrap;margin-top:10px;gap:6px}
+
+/* stats */
+.stats-grid-5{grid-template-columns:repeat(5,1fr)}
+.stack{display:grid;gap:13px;align-content:start}
+
+/* health */
+.meter{height:8px;border-radius:20px;background:#252e48;overflow:hidden;margin:16px 0 8px}
+.meter span{display:block;height:100%;background:linear-gradient(90deg,#6e60c8,#65d9bd);border-radius:20px}
+.checklist{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:2px}
+.check{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line)}
+.check strong{font-size:13px;display:block}
+.check small{font-size:12px;color:#a0aac1}
+.check-mark{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;flex-shrink:0}
+.check.pass .check-mark{background:rgba(101,217,189,.16);color:var(--ok)}
+.check.fail .check-mark{background:rgba(255,150,155,.16);color:var(--bad)}
+.check.unknown .check-mark{background:rgba(160,170,193,.16);color:#a0aac1}
+
+/* lists */
+.people,.rank-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:2px}
+.people{grid-template-columns:repeat(2,1fr);column-gap:24px}
+.people li,.rank-list li{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13px}
+.people li span,.rank-list li span{margin-left:auto;color:#a0aac1;font-size:12px}
+.people a,.rank-list a{color:#e8eaf5;text-decoration:none}
+.people a:hover,.rank-list a:hover{text-decoration:underline}
+.avatar-sm{width:28px;height:28px;border-radius:8px}
+.details{display:grid;gap:0;margin:14px 0 0}
+.details div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-top:1px solid var(--line);font-size:13px}
+.details dt{color:#a0aac1}
+.details dd{margin:0;text-align:right}
+.details a,.profile-meta a{color:#b5aaff}
+.repo-header{align-items:flex-start;flex-wrap:wrap}
+.profile-meta{flex-wrap:wrap}
+.event-types{margin-top:14px}
+
+/* compare */
+.table-wrap{overflow-x:auto}
+.compare-table{width:100%;border-collapse:collapse;font-size:14px;min-width:420px}
+.compare-table th,.compare-table td{padding:12px 14px;text-align:left;border-top:1px solid var(--line)}
+.compare-table thead th{border-top:0;font:600 14px "Space Grotesk",sans-serif}
+.compare-table thead a{color:#e8eaf5}
+.compare-table tbody th{font-weight:400;color:#a0aac1}
+.compare-table td.lead{color:var(--ok);font-weight:700;background:rgba(101,217,189,.07)}
+
+/* motion */
+#view>*{animation:rise .35s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* responsive */
+@media(max-width:900px){
+  .feature-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-grid-5{grid-template-columns:repeat(2,1fr)}
+  .people{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  .topbar{height:auto;min-height:65px;padding-top:10px;padding-bottom:10px;gap:8px;flex-wrap:wrap}
+  .topbar-right{gap:8px}
+  .search-form{height:auto;flex-wrap:wrap;padding:10px}
+  .search-icon{display:none}
+  .search-form input{flex:1 1 100%;height:44px}
+  .search-form select,.search-form button{flex:1 1 40%}
+  .search-form button{font-size:12px}
+  .search-form button span{font-size:17px;margin-left:7px}
+  .feature-grid{grid-template-columns:1fr}
+  .repo-main p{max-width:52vw}
+}
+@media(max-width:400px){
+  .api-status{display:flex}
+  .search-form button{font-size:12px}
+}
+
+/* Decorative blurred blobs must not widen the page (they caused sideways scrolling, especially on phones). */
+.ambient{position:fixed}
+
+/* Breathing room under the top bar when the search hero is hidden (repo, compare, most-starred pages). */
+.hero.hidden + #view{padding-top:32px}
+/* Keep the stars/forks/date columns aligned from one repository row to the next. */
+.repo-stats{min-width:176px;justify-content:end}
+@media(max-width:700px){.repo-stats{min-width:0}}
