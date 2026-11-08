@@ -1,0 +1,29 @@
+{
+  "name": "devtrack",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "description": "A clean, open-source dashboard for exploring public GitHub activity and repository health.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test",
+    "check": "npm test && npm run build"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0",
+    "vite": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "keywords": [
+    "github",
+    "analytics",
+    "dashboard",
+    "open-source",
+    "developer-tools"
+  ]
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1020" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="DevTrack turns public GitHub data into a clear view of developer activity, repository reach, and project health." />
+    <title>DevTrack — Your GitHub, in focus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/app.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#view">Skip to content</a>
+    <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+    <header class="topbar">
+      <a class="brand" href="#/" aria-label="DevTrack home"><span class="brand-mark">D</span><span>devtrack<span class="brand-dot">.</span></span></a>
+      <div class="topbar-right">
+        <nav class="topnav" aria-label="Main">
+          <a href="#/" data-nav="home">Explore</a>
+          <a href="#/compare" data-nav="compare">Compare</a>
+          <a href="#/trending" data-nav="trending">Most starred</a>
+        </nav>
+        <span class="api-status" id="rate-status" role="status"><i></i><span>GitHub API</span></span>
+        <a class="github-link" href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
+      </div>
+    </header>
+
+    <main class="shell" id="main">
+      <section id="hero" class="hero">
+        <div class="eyebrow"><span class="eyebrow-line"></span> OPEN SOURCE PROJECT INSIGHTS</div>
+        <h1>Your GitHub,<br><span>in focus.</span></h1>
+        <p class="hero-copy">A clearer picture of your open-source footprint. Explore public repositories, community reach, and the work behind any profile or organization.</p>
+        <form id="search-form" class="search-form" role="search">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="username-input" type="text" autocomplete="off" spellcheck="false" placeholder="Enter a GitHub username…" aria-label="GitHub username or organization" />
+          <select id="search-kind" aria-label="Search type"><option value="user">Profile</option><option value="org">Organization</option></select>
+          <button id="search-button" type="submit">Explore <span aria-hidden="true">→</span></button>
+        </form>
+        <div class="search-hint">Try <button class="example-user" type="button">torvalds</button>, <button class="example-user" type="button">sindresorhus</button>, or your own username.</div>
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+      </section>
+
+      <div id="view" tabindex="-1" aria-live="polite"></div>
+
+      <section class="bottom-note"><span class="bottom-mark" aria-hidden="true">✳</span><div><strong>Built for the open-source community.</strong><p>DevTrack is an independent community project. It is not affiliated with or endorsed by GitHub.</p></div><a href="https://github.com" target="_blank" rel="noopener noreferrer">Explore GitHub ↗</a></section>
+    </main>
+    <footer><span>DEVTRACK <span class="brand-dot">●</span> OPEN SOURCE</span><span>Made to make open source more visible.</span></footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
